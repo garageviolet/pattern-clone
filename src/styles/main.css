@@ -1,0 +1,113 @@
+/* ============================================
+   GOOGLE FONTS IMPORT
+   ============================================ */
+/* Import Inter font family with multiple weights for typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ============================================
+   CSS VARIABLES / DESIGN TOKENS
+   ============================================ */
+/* Global design tokens for colors, fonts, and spacing used throughout the app */
+:root {
+  /* Primary brand color - blue used for links, buttons, active states */
+  --swarma-primary: #1890ff;
+  
+  /* Text color hierarchy - from darkest (title) to lightest (disabled) */
+  --swarma-text-title: rgba(0, 0, 0, 0.85);      /* Main headings and titles */
+  --swarma-text-primary: rgba(0, 0, 0, 0.65);    /* Body text and primary content */
+  --swarma-text-secondary: rgba(0, 0, 0, 0.55);   /* Secondary text, subtitles */
+  --swarma-text-disable: rgba(0, 0, 0, 0.25);     /* Disabled text states */
+  
+  /* Border and divider colors */
+  --swarma-border: rgba(0, 0, 0, 0.15);          /* Standard borders */
+  --swarma-dividers: rgba(0, 0, 0, 0.06);        /* Subtle dividers between sections */
+  --swarma-background: rgba(0, 0, 0, 0.04);      /* Light background tints */
+  
+  /* Typography - Chinese fonts first, then fallback to system fonts */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Inter',
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Light color scheme (no dark mode) */
+  color-scheme: light;
+  
+  /* Global background color - light gray used throughout the app */
+  background-color: #f4f4f4;
+  font-weight: 400;
+}
+
+/* ============================================
+   RESET / BASE STYLES
+   ============================================ */
+
+/* Box-sizing reset - ensures padding and border are included in element width/height */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Body reset - removes default margins, sets minimum height, and base colors */
+body {
+  margin: 0;
+  min-height: 100vh;                              /* Full viewport height minimum */
+  background: #f4f4f4;                            /* Match root background */
+  color: var(--swarma-text-primary);              /* Default text color */
+}
+
+/* Link styling - inherit color from parent, remove default underline */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   LAYOUT CONTAINERS
+   ============================================ */
+
+/* Main app container - flexbox column layout for header, content, footer */
+.app-shell {
+  min-height: 100vh;                              /* Full viewport height */
+  display: flex;
+  flex-direction: column;                         /* Stack header, content, footer vertically */
+  background: #f4f4f4;                            /* Light gray background */
+}
+
+/* Main content area - centered container with max width for readability */
+.content-shell {
+  flex: 1;                                        /* Take up remaining space between header and footer */
+  width: min(1400px, 98vw);                      /* Max width 1400px, or 94% of viewport (leaves 3% margin on each side) */
+  margin: 0 auto;                                 /* Center horizontally */
+  padding: 15px 0 30px;                          /* Small top padding, larger bottom padding */
+}
+
+/* Spacing between consecutive sections */
+section + section {
+  margin-top: 57px;                               /* Vertical spacing between sections */
+}
+
+/* ============================================
+   COMPONENT STYLES
+   ============================================ */
+
+/* Card component - white background with subtle shadow, sharp corners */
+.surface-card {
+  background: #fff;                               /* White card background */
+  border-radius: 0;                               /* Sharp corners (no rounding) */
+  box-shadow: 0 10px 30px rgba(15, 34, 67, 0.08); /* Subtle shadow for depth */
+}
+
+/* Section heading - large, bold title text */
+.section-title {
+  font-size: 30px;
+  font-weight: 600;                               /* Semi-bold */
+  color: var(--swarma-text-title);                /* Dark text for headings */
+  margin-bottom: 8px;                             /* Small spacing below title */
+}
+
+/* Section subtitle - smaller, lighter text below title */
+.section-subtitle {
+  color: var(--swarma-text-secondary);            /* Lighter gray for secondary text */
+  font-size: 16px;
+  margin-bottom: 28px;                            /* Larger spacing below subtitle */
+}
+
