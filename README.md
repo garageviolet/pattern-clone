@@ -1,6 +1,49 @@
-# Vue 3 + TypeScript + Vite
+# Pattern Clone
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A Vue 3 implementation of the Pattern learning platform interface.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
-# pattern-clone
+## Overview
+
+This project recreates the core functionality of Pattern (pattern.swarma.org) using modern web technologies. Built with Vue 3 and TypeScript, it demonstrates practical API integration and component architecture.
+
+## Quick Start
+
+```bash
+npm install
+npm run dev
+```
+
+## Technology
+
+- Vue 3 with Composition API and TypeScript
+- Vite for build tooling
+- Ant Design Vue component library
+- Pinia for state management
+- Axios for HTTP requests
+
+## Development
+
+The proxy configuration in `vite.config.ts` handles CORS by routing requests to:
+- `pattern.swarma.org` for main API endpoints
+- `api.swarma.org` for learning path data
+
+### Build Commands
+
+```bash
+npm run dev      # Start development server
+npm run build    # Create production build
+npm run preview  # Preview production build locally
+```
+
+## Implementation Notes
+
+The application uses Vue 3's `<script setup>` syntax for component composition. State management is handled through Pinia stores, and routing is configured with Vue Router.
+
+
+All API integrations maintain compatibility with the original Pattern platform endpoints.
+
+https://github.com/user-attachments/assets/530893b3-26a8-44e5-a777-b0ff7fcbcadc
+
+## Reference
+
+Original platform: https://pattern.swarma.org
